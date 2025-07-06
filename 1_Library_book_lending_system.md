@@ -22,23 +22,23 @@ erDiagram
     lendings }o--|{ books : "N:N"
     
     users {
-        int id PK
+        INTEGER id PK
         string name "ユーザー名"
     }
 
     books {
-        int id PK
-        string title "タイトル"
-        int stock "在庫, 0になることがある"
+        INTEGER id PK
+        VARCHAR(3000) title UK "タイトル"
+        INTEGER stock "在庫, 0になることがある"
     }
     
     lendings {
-        int id PK
-        int user_id FK
-        int book_id FK
-        datetime return_deadline "貸出期限"
-        datetime lended_at "貸出日時"
-        datetime returned_at "返却日時, null"
+        INTEGER id PK
+        INTEGER user_id FK
+        INTEGER book_id FK
+        DATETIME return_deadline "貸出期限"
+        DATETIME lended_at "貸出日時"
+        DATETIME returned_at "返却日時, null"
     }
 ```
 
@@ -52,29 +52,29 @@ erDiagram
     returns }o--|{ books : "N:N"
     
     users {
-        int id PK
+        INTEGER id PK
         string name "ユーザー名"
     }
 
     books {
-        int id PK
-        string title "タイトル"
-        int stock "在庫, 0になることがある"
+        INTEGER id PK
+        VARCHAR(3000) title UK "タイトル"
+        INTEGER stock "在庫, 0になることがある"
     }
     
     lendings {
-        int id PK
-        int user_id FK
-        int book_id FK
-        datetime return_deadline "貸出期限"
-        datetime lended_at "貸出日時"
+        INTEGER id PK
+        INTEGER user_id FK
+        INTEGER book_id FK
+        DATETIME return_deadline "貸出期限"
+        DATETIME lended_at "貸出日時"
     }
     
     returns {
-        int id PK
-        int user_id FK
-        int book_id FK
-        int lending_id FK
-        datetime returned_at "返却日時, null"
+        INTEGER id PK
+        INTEGER user_id FK
+        INTEGER book_id FK
+        INTEGER lending_id FK
+        DATETIME returned_at "返却日時, null"
     }
 ```
